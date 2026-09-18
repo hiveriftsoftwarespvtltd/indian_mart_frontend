@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+body,
+input,
+textarea,
+select,
+button {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: normal !important;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #0E0E3B;
+  --secondary: #C89B3C;
+  --gold: #D4AF37;
+  --gold-bright: #D4AF37;
+  --gold-deep: #B8862B;
+  --gold-soft: #E0B76D;
+  --bronze: #8C755D;
+  --dark-brown: #513B25;
+  --light: #FAF9F8;
+  --gray-light: #D8D4CF;
+  --gray: #ADA7A1;
+  --white: #FFFFFF;
+}
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+  --color-primary: #0E0E3B;
+  --color-accent: #C89B3C;
+  --color-accent-dark: #B8862B;
+  --color-accent-light: #E0B76D;
+  --color-gold: #D4AF37;
+  --color-bronze: #8C755D;
+  --color-dark-brown: #513B25;
+  --color-light: #FAF9F8;
+  --color-gray-light: #D8D4CF;
+  --color-gray: #ADA7A1;
+}
+
+
+.hero-bg-responsive {
+  background-image: url('./assets/mobilehero.png');
+}
+
+@media (min-width: 1024px) {
+  .hero-bg-responsive {
+    background-image: url('./assets/hero.png');
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Dots animations synchronized with marquee (30s cycle) */
+.brand-dot-1 {
+  animation: dotActive1 30s ease-in-out infinite;
+}
+
+.brand-dot-2 {
+  animation: dotActive2 30s ease-in-out infinite;
+}
+
+.brand-dot-3 {
+  animation: dotActive3 30s ease-in-out infinite;
+}
+
+.brand-dot-4 {
+  animation: dotActive4 30s ease-in-out infinite;
+}
+
+@keyframes dotActive1 {
+
+  0%,
+  20% {
+    background-color: #C89B3C;
+    transform: scale(1.1);
+  }
+
+  25%,
+  95% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+
+  100% {
+    background-color: #C89B3C;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes dotActive2 {
+
+  0%,
+  20% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+
+  25%,
+  45% {
+    background-color: #C89B3C;
+    transform: scale(1.1);
+  }
+
+  50%,
+  100% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+}
+
+@keyframes dotActive3 {
+
+  0%,
+  45% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+
+  50%,
+  70% {
+    background-color: #C89B3C;
+    transform: scale(1.1);
+  }
+
+  75%,
+  100% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+}
+
+@keyframes dotActive4 {
+
+  0%,
+  70% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+
+  75%,
+  95% {
+    background-color: #C89B3C;
+    transform: scale(1.1);
+  }
+
+  100% {
+    background-color: rgba(173, 167, 161, 0.5);
+    transform: scale(1);
+  }
+}
+
+/* Hide scrollbars on all browsers */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
